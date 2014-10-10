@@ -100,5 +100,7 @@ public class MyActivity extends Activity {
         }
         canvas.drawBitmap(bitmap, new Matrix(), paint);
         iv.invalidate();
+
+
     }
 }
