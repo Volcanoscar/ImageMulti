@@ -12,6 +12,7 @@ import android.graphics.PorterDuffXfermode;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 public class MyActivity extends Activity {
@@ -19,12 +20,14 @@ public class MyActivity extends Activity {
     private Canvas canvas;
     private Paint paint;
     private Bitmap backgroundBitmap;
+    private TextView tv_mode_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
         iv = (ImageView) findViewById(R.id.iv);
+        tv_mode_name = (TextView) findViewById(R.id.tv_mode_name);
         backgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.a1);
         Bitmap tempBitmap = Bitmap.createBitmap(backgroundBitmap.getWidth(), backgroundBitmap.getHeight(), backgroundBitmap.getConfig());
         canvas = new Canvas(tempBitmap);
@@ -45,57 +48,75 @@ public class MyActivity extends Activity {
         switch(view.getId()) {
             case R.id.bt_ADD:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.ADD));
+                tv_mode_name.setText("PorterDuff.Mode.ADD");
                 break;
             case R.id.bt_CLEAR:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+                tv_mode_name.setText("PorterDuff.Mode.CLEAR");
                 break;
             case R.id.bt_DARKEN:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DARKEN));
+                tv_mode_name.setText("PorterDuff.Mode.DARKEN");
                 break;
             case R.id.bt_DST:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST));
+                tv_mode_name.setText("PorterDuff.Mode.DST");
                 break;
             case R.id.bt_DST_ATOP:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_ATOP));
+                tv_mode_name.setText("PorterDuff.Mode.DST_ATOP");
                 break;
             case R.id.bt_DST_IN:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+                tv_mode_name.setText("PorterDuff.Mode.DST_IN");
                 break;
             case R.id.bt_DST_OUT:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+                tv_mode_name.setText("PorterDuff.Mode.DST_OUT");
                 break;
             case R.id.bt_DST_OVER:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OVER));
+                tv_mode_name.setText("PorterDuff.Mode.DST_OVER");
                 break;
             case R.id.bt_LIGHTEN:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.LIGHTEN));
+                tv_mode_name.setText("PorterDuff.Mode.LIGHTEN");
                 break;
             case R.id.bt_MULTIPLY:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.MULTIPLY));
+                tv_mode_name.setText("PorterDuff.Mode.MULTIPLY");
                 break;
             case R.id.bt_OVERLAY:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.OVERLAY));
+                tv_mode_name.setText("PorterDuff.Mode.OVERLAY");
                 break;
             case R.id.bt_SCREEN:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SCREEN));
+                tv_mode_name.setText("PorterDuff.Mode.SCREEN");
                 break;
             case R.id.bt_SRC:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
+                tv_mode_name.setText("PorterDuff.Mode.SRC");
                 break;
             case R.id.bt_SRC_ATOP:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
+                tv_mode_name.setText("PorterDuff.Mode.SRC_ATOP");
                 break;
             case R.id.bt_SRC_IN:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+                tv_mode_name.setText("PorterDuff.Mode.SRC_IN");
                 break;
             case R.id.bt_SRC_OUT:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT));
+                tv_mode_name.setText("PorterDuff.Mode.SRC_OUT");
                 break;
             case R.id.bt_SRC_OVER:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER));
+                tv_mode_name.setText("PorterDuff.Mode.SRC_OVER");
                 break;
             case R.id.bt_XOR:
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.XOR));
+                tv_mode_name.setText("PorterDuff.Mode.XOR");
                 break;
         }
         canvas.drawBitmap(bitmap, new Matrix(), paint);
